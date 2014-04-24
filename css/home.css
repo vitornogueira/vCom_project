@@ -1,0 +1,39 @@
+//CSS HOME PROJECT
+body{
+    background: #e5e5e5;
+}
+#body-site{
+    margin-top: 200px;
+    padding-top: 30px;
+    text-align: center;
+    background-color: #272822;
+    width:600px;
+    height: 250px;
+    position: relative;
+    left: 33%;
+    box-shadow: 2px 2px 2px 2px #171714;
+    font-family: 'Audiowide', cursive;
+    transition:0.7s;
+}
+#body-site:hover{
+
+}
+h1{
+    text-align: center;
+    color: white;
+}
+input[type="text"] {
+    opacity: 0.7;
+    transition: 1s;
+    text-align: center;
+    width: 400px;
+    padding: 10px 15px;
+    font-size: 2em;
+    line-height: 40px;
+    border-radius: 10px;
+    border: 1px solid orange;
+    outline: none;
+}
+input[type="text"]:hover {
+    opacity: 1;
+}
