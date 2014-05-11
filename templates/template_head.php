@@ -1,5 +1,4 @@
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <meta>
-    
-    
+  <meta charset="UTF-8">
