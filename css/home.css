@@ -1,39 +1,60 @@
-//CSS HOME PROJECT
-body{
+body {
     background: #e5e5e5;
+
+    -webkit-transition: 0.7s;
+       -moz-transition: 0.7s;
+        -ms-transition: 0.7s;
+         -o-transition: 0.7s;
+            transition: 0.7s;
 }
-#body-site{
-    margin-top: 200px;
-    padding-top: 30px;
-    text-align: center;
-    background-color: #272822;
-    width:600px;
-    height: 250px;
+
+#body-site {
     position: relative;
     left: 33%;
-    box-shadow: 2px 2px 2px 2px #171714;
-    font-family: 'Audiowide', cursive;
-    transition:0.7s;
-}
-#body-site:hover{
 
+    width: 600px;
+    height: 250px;
+    margin-top: 200px;
+    padding-top: 30px;
+
+    background-color: #272822;
+    box-shadow: 0 0 20px rgba(23, 23, 20, 0.7);
+
+    text-align: center;
+    font-family: 'Audiowide', cursive;
+
+    -webkit-transition: 0.7s;
+       -moz-transition: 0.7s;
+        -ms-transition: 0.7s;
+         -o-transition: 0.7s;
+            transition: 0.7s;
 }
-h1{
+
+h1 {
     text-align: center;
     color: white;
 }
+
 input[type="text"] {
-    opacity: 0.7;
-    transition: 1s;
-    text-align: center;
     width: 400px;
     padding: 10px 15px;
+    border: 1px solid orange;
+
+    border-radius: 10px;
+    outline: none;
+    opacity: 0.7;
+
     font-size: 2em;
     line-height: 40px;
-    border-radius: 10px;
-    border: 1px solid orange;
-    outline: none;
+    text-align: center;
+
+    -webkit-transition: 0.7s;
+       -moz-transition: 0.7s;
+        -ms-transition: 0.7s;
+         -o-transition: 0.7s;
+            transition: 0.7s;
 }
+
 input[type="text"]:hover {
     opacity: 1;
 }
