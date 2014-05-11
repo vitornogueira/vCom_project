@@ -1,9 +1,9 @@
-<?php include 'templates/template_head.php'; ?>
+<?php include "templates/template_head.php"; ?>
     <title>sWord</title>
 
-    <link href='http://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Audiowide">
     <!-- CSS local -->
-    <link href="css/home.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/home.css">
 </head>
 <body>
     <header id="topo"></header>
@@ -13,4 +13,4 @@
             <input type="text" id="field" x-webkit-speech placeholder="Home">
         </div>
     </section>
-<?php include 'templates/template_rodape.php'; ?>
+<?php include "templates/template_rodape.php"; ?>
