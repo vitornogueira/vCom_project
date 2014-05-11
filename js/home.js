@@ -1,34 +1,88 @@
-    function pegarValor() {
-    var valor = $("#home").val();
-    
-    if(valor == "lights on"){
-         $.post("control/serial_port.php", {valor:"a"});
-    }
-    if(valor == "lights off"){
-         $.post("control/serial_port.php", {valor:"b"});
-    }
-    
-    //STYLES
-    if (valor == "red") {
-        $("#body-site").css("background", "#e12a2b");
-    }
-    if (valor == "blue") {
-        $("#body-site").css("background", "#405d9b");
-    }
-    if (valor == "black") {
-        $("#body-site").css("background", "#171814");
-    }
-    if (valor == "yellow") {
-        $("#body-site").css("background", "#fcd209");
-    }
-    if (valor == "background black") {
-        $("body").css("background", "#171814");
-    }
-    if (valor == "background red") {
-        $("body").css("background", "#e12a2b");
-    }
-    if (valor == "background blue") {
-        $("body").css("background", "#405d9b");
+(function($) {
+
+  var recognition = new webkitSpeechRecognition(),
+    $body = $('body'),
+    $field = $('#field'),
+    $bodySite = $('#body-site'),
+    recognizin = false,
+    colors = {
+      blue: '#405d9b',
+      red: '#e12a2b',
+      green: '#228b22',
+      yellow: '#fcd209',
+      black: '#171814'
+    };
+
+  recognition.continuous = true;
+  recognition.interimResults = true;
+
+  $field.on('focus', function(event) {
+    if (recognizin) {
+      return;
     }
 
-}
+    recognizin = true;
+    recognition.start();
+  });
+
+  recognition.onresult = function(event) {
+    var command;
+
+    for (var i = event.resultIndex; i < event.results.length; ++i) {
+      if (event.results[i].isFinal) {
+        execute(event.results[i][0].transcript);
+      }
+    }
+  };
+
+  function execute (command) {
+    command = $.trim(command).toLowerCase();
+
+    $field.val(command);
+
+    switch (command) {
+      case 'red':
+        $bodySite.css('background', colors.red);
+        break;
+      case 'green':
+        $bodySite.css('background', colors.green);
+        break;
+      case 'blue':
+        $bodySite.css('background', colors.blue);
+        break;
+      case 'yellow':
+        $bodySite.css('background', colors.yellow);
+        break;
+      case 'black':
+        $bodySite.css('background', colors.black);
+        break;
+      case 'lights on':
+        $.post('control/serial_port.php', {
+          valor: 'a'
+        });
+        break;
+      case 'lights off':
+        $.post('control/serial_port.php', {
+          valor: 'b'
+        });
+        break;
+      case 'background red':
+        $body.css('background', colors.red);
+        break;
+      case 'background green':
+        $body.css('background', colors.green);
+        break;
+      case 'background blue':
+        $body.css('background', colors.blue);
+        break;
+      case 'background yellow':
+        $bodySite.css('background', colors.yellow);
+        break;
+      case 'background black':
+        $body.css('background', colors.black);
+        break;
+    }
+  }
+
+
+})(jQuery);
